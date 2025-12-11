@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-6xl mx-auto p-6">
+  <div class="max-w-6xl mx-auto">
     <!-- Sound Toggle Button -->
     <div class="flex justify-end mb-4">
       <button

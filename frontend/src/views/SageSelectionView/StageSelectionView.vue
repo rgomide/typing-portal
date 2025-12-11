@@ -3,9 +3,18 @@
     <h1 class="text-3xl font-bold mb-8 text-gray-800">Selecione o estágio</h1>
 
     <div class="flex flex-row flex-wrap gap-6 justify-center items-center max-w-7xl mx-auto">
-      <StageCard v-if="!isLoading" v-for="stage in stages" :key="stage.id" :id="stage.id" :title="stage.title"
-        :description="stage.description" :difficulty="stage.difficulty" :enabled="stage.enabled"
-        :thumb-url="stage.thumbUrl" @click="handleStageClick(stage.id)" />
+      <StageCard
+        v-if="!isLoading"
+        v-for="stage in stages"
+        :key="stage.id"
+        :id="stage.id"
+        :title="stage.title"
+        :description="stage.description"
+        :difficulty="stage.difficulty"
+        :enabled="stage.enabled"
+        :thumb-url="stage.thumbUrl"
+        @click="handleStageClick(stage.id)"
+      />
       <div v-else class="flex justify-center items-center">
         <Spinner color="gray" size="60" />
       </div>
@@ -26,9 +35,7 @@ const emits = defineEmits(['error'])
 const router = useRouter()
 const { getStages, isLoading, data, error } = useBackend()
 // refs
-const stages = ref([
-
-])
+const stages = ref([])
 
 // actions
 const handleStageClick = (stageId) => {

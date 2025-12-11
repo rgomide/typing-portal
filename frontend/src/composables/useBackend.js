@@ -17,6 +17,11 @@ export function useBackend() {
     return makeRequest(url, GET)
   }
 
+  async function getStage(stageId) {
+    const url = `api/stages/${stageId}`
+    return makeRequest(url, GET)
+  }
+
   // private functions
   async function makeRequest(url, method, payload) {
     resetState()
@@ -112,6 +117,7 @@ export function useBackend() {
 
   return {
     getStages,
+    getStage,
     isLoading,
     data,
     error

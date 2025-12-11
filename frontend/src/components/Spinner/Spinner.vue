@@ -1,23 +1,26 @@
 <template>
-  <div class="spinner" :style="{
-    width: `${size}px`,
-    height: `${size}px`,
-    borderWidth: `${Math.max(2, Math.floor(size / 8))}px`,
-    borderColor: color,
-    borderTopColor: 'transparent',
-  }"></div>
+  <div
+    class="spinner"
+    :style="{
+      width: `${size}px`,
+      height: `${size}px`,
+      borderWidth: `${Math.max(2, Math.floor(size / 8))}px`,
+      borderColor: color,
+      borderTopColor: 'transparent'
+    }"
+  ></div>
 </template>
 
 <script setup>
 defineProps({
   color: {
     type: String,
-    default: '#3b82f6', // default blue color
+    default: '#3b82f6' // default blue color
   },
   size: {
     type: Number,
-    default: 24,
-  },
+    default: 24
+  }
 })
 </script>
 

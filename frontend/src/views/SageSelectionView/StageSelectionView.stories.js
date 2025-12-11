@@ -2,7 +2,6 @@ import { vueRouter } from 'storybook-vue3-router'
 import StageSelectionView from './StageSelectionView.vue'
 import { http, HttpResponse, delay } from 'msw'
 
-
 export default {
   title: 'Views/StageSelectionView',
   component: StageSelectionView
@@ -18,7 +17,8 @@ const handlers = [
           'Start your typing journey with simple words and sentences. Perfect for absolute beginners.',
         difficulty: 1,
         enabled: true,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       },
       {
         id: 2,
@@ -26,7 +26,8 @@ const handlers = [
         description: 'Practice typing the most commonly used words in the English language.',
         difficulty: 2,
         enabled: true,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       },
       {
         id: 3,
@@ -35,7 +36,8 @@ const handlers = [
           'Moderate difficulty with longer texts and varied vocabulary. Build your speed and accuracy.',
         difficulty: 3,
         enabled: true,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       },
       {
         id: 4,
@@ -44,7 +46,8 @@ const handlers = [
           'Challenge yourself with complex texts, technical terms, and faster typing speeds.',
         difficulty: 4,
         enabled: false,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       },
       {
         id: 5,
@@ -53,15 +56,18 @@ const handlers = [
           'Extremely challenging typing exercises for advanced users. Fast speeds and complex texts required.',
         difficulty: 5,
         enabled: false,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       },
       {
         id: 6,
         title: 'Speed Training',
-        description: 'Focus on increasing your words per minute with timed exercises and speed drills.',
+        description:
+          'Focus on increasing your words per minute with timed exercises and speed drills.',
         difficulty: 3,
         enabled: true,
-        thumbUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+        thumbUrl:
+          'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
       }
     ]
     await delay(500)
