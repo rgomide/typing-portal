@@ -9,7 +9,7 @@ export default {
 }
 
 const handlers = [
-  http.get('*api/stages', async ({ request }) => {
+  http.get('*/api/stages', async ({ request }) => {
     const stages = [
       {
         id: 1,

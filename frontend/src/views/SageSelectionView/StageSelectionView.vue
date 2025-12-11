@@ -2,11 +2,13 @@
   <div class="p-8">
     <h1 class="text-3xl font-bold mb-8 text-gray-800">Selecione o estágio</h1>
 
-    <div class="flex flex-row flex-wrap gap-6 justify-center items-center">
+    <div class="flex flex-row flex-wrap gap-6 justify-center items-center max-w-7xl mx-auto">
       <StageCard v-if="!isLoading" v-for="stage in stages" :key="stage.id" :id="stage.id" :title="stage.title"
         :description="stage.description" :difficulty="stage.difficulty" :enabled="stage.enabled"
         :thumb-url="stage.thumbUrl" @click="handleStageClick(stage.id)" />
-      <Spinner v-else color="gray" size="48" />
+      <div v-else class="flex justify-center items-center">
+        <Spinner color="gray" size="60" />
+      </div>
     </div>
   </div>
 </template>
