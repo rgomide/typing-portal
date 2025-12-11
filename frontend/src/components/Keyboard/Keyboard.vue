@@ -3,7 +3,7 @@
     <!-- Keyboard Standard Selector -->
     <div class="mb-6">
       <label for="keyboard-standard" class="block text-sm font-medium text-gray-700 mb-2">
-        Keyboard Standard
+        Padrão
       </label>
       <select
         id="keyboard-standard"

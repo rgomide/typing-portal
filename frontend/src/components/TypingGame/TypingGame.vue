@@ -2,20 +2,20 @@
   <div class="max-w-6xl mx-auto p-6">
     <!-- Statistics Panel -->
     <div class="mb-6 grid grid-cols-4 gap-4">
-      <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
-        <div class="text-sm text-gray-600 font-medium">Correct Keys</div>
-        <div class="text-2xl font-bold text-blue-600">{{ stats.correct }}</div>
+      <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
+        <div class="text-sm text-gray-600 font-medium">Teclas Corretas</div>
+        <div class="text-2xl font-bold text-green-600">{{ stats.correct }}</div>
       </div>
       <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-red-500">
-        <div class="text-sm text-gray-600 font-medium">Wrong Keys</div>
+        <div class="text-sm text-gray-600 font-medium">Teclas Erradas</div>
         <div class="text-2xl font-bold text-red-600">{{ stats.wrong }}</div>
       </div>
-      <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-green-500">
-        <div class="text-sm text-gray-600 font-medium">Progress</div>
-        <div class="text-2xl font-bold text-green-600">{{ progressPercentage }}%</div>
+      <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-blue-500">
+        <div class="text-sm text-gray-600 font-medium">Progresso</div>
+        <div class="text-2xl font-bold text-blue-600">{{ progressPercentage }}%</div>
       </div>
       <div class="bg-white rounded-lg shadow-md p-4 border-l-4 border-purple-500">
-        <div class="text-sm text-gray-600 font-medium">Time</div>
+        <div class="text-sm text-gray-600 font-medium">Tempo</div>
         <div class="text-2xl font-bold text-purple-600">{{ formattedTime }}</div>
       </div>
     </div>
@@ -23,8 +23,8 @@
     <!-- Text Challenge Display -->
     <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
       <div class="text-lg font-medium text-gray-700 mb-4">
-        <span v-if="isCompleted" class="text-green-600 font-bold">✓ Challenge Completed!</span>
-        <span v-else>Type the text below:</span>
+        <span v-if="isCompleted" class="text-green-600 font-bold">✓ Desafio Concluído!</span>
+        <span v-else>Digite o texto abaixo:</span>
       </div>
       <div
         class="text-2xl leading-relaxed font-mono p-4 bg-gray-50 rounded border-2 border-gray-200 min-h-[150px] break-words overflow-wrap-anywhere whitespace-pre-wrap"
@@ -115,8 +115,8 @@ const getCharClass = (index) => {
     // Already typed
     const isCorrect = typedChars.value[index] === props.textChallenge[index]
     return isCorrect
-      ? 'text-white bg-green-500 font-semibold shadow-sm'
-      : 'text-white bg-red-500 font-semibold line-through shadow-sm'
+      ? 'text-green-700 bg-green-200 font-semibold shadow-sm'
+      : 'text-red-700 bg-red-200 font-semibold line-through shadow-sm'
   } else if (index === currentIndex.value) {
     // Current character
     return 'bg-yellow-400 text-gray-900 underline font-bold shadow-md animate-pulse'
