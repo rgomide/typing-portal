@@ -1,6 +1,9 @@
 import '../src/assets/css/tailwind.css'
+import { initialize, mswLoader } from 'msw-storybook-addon'
 import { setup } from '@storybook/vue3-vite'
 import { createPinia } from 'pinia'
+
+initialize()
 
 const pinia = createPinia()
 
@@ -18,6 +21,7 @@ const preview = {
       },
     },
   },
+  loaders: [mswLoader]
 };
 
 export default preview;
