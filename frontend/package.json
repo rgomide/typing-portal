@@ -19,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "@vueuse/core": "^14.1.0",
     "@vueuse/sound": "^2.1.3",
+    "axios": "^1.13.2",
     "pinia": "^3.0.4",
     "storybook-vue3-router": "^7.0.0",
     "tailwindcss": "^4.1.17",
@@ -28,6 +29,8 @@
   "devDependencies": {
     "@storybook/vue3-vite": "^10.1.6",
     "@vitejs/plugin-vue": "^6.0.2",
+    "msw": "^2.12.4",
+    "msw-storybook-addon": "^2.0.6",
     "prettier": "3.6.2",
     "storybook": "^10.1.6",
     "vite": "^7.2.4",

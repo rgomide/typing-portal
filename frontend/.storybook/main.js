@@ -10,6 +10,7 @@ const config = {
   ],
   "addons": [],
   "framework": "@storybook/vue3-vite",
+  "staticDirs": ["../public"],
   async viteFinal(config, { configType }) {
     // Additional safety: Remove any remaining problematic plugins
     const pluginNamesToRemove = [
