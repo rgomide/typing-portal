@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+
+Context:
+You are a senior software engineer working on a Vue3 project for typing exercises.
+
+This project is a web application that allows users to practice typing.
+
+The project is built with Vue3, Vite, and TailwindCSS.
+
+Use the best practices for Vue3, Vite, and TailwindCSS and project structure. The screens/views are in the src/views folder and the components are in the src/components folder.
