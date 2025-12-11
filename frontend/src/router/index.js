@@ -1,4 +1,4 @@
-import AuthView from '@/views/AuthView.vue'
+import AuthView from '@/views/AuthView/AuthView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
