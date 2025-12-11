@@ -106,7 +106,6 @@
             </svg>
             <div>
               <p class="text-base font-semibold text-blue-700 mb-1">Clique aqui para começar</p>
-              <p class="text-sm text-blue-600">ou comece a digitar</p>
             </div>
           </div>
         </div>

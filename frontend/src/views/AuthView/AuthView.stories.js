@@ -1,5 +1,5 @@
 import AuthView from './AuthView.vue'
-import { useRouter } from 'vue-router'
+import { vueRouter } from 'storybook-vue3-router'
 
 export default {
   title: 'Views/AuthView',
@@ -16,10 +16,9 @@ export const Default = {
   render: (args) => ({
     components: { AuthView },
     setup() {
-      // Router is already set up globally in preview.js
       return { args }
     },
     template: AuthViewTemplate
   }),
-  parameters: {}
+  decorators: [vueRouter()]
 }

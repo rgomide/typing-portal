@@ -1,5 +1,6 @@
 import AuthView from '@/views/AuthView/AuthView.vue'
 import StageSelectionView from '@/views/StageSelectionView/StageSelectionView.vue'
+import TypingGameView from '@/views/TypingGameView/TypingGameView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/stage-selection',
       name: 'stage-selection',
       component: StageSelectionView
+    },
+    {
+      path: '/typing-game/:id',
+      name: 'typing-game',
+      component: TypingGameView
     }
   ]
 })

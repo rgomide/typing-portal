@@ -1,3 +1,4 @@
+import { vueRouter } from 'storybook-vue3-router'
 import StageSelectionView from './StageSelectionView.vue'
 
 export default {
@@ -18,5 +19,6 @@ export const Default = {
       return { args }
     },
     template: StageSelectionViewTemplate
-  })
+  }),
+  decorators: [vueRouter()]
 }

@@ -62,7 +62,7 @@
 const emits = defineEmits(['click'])
 
 // props
-defineProps({
+const props = defineProps({
   id: {
     type: [String, Number],
     required: true
@@ -103,6 +103,8 @@ defineProps({
 
 // actions
 const handleClick = () => {
-  emits('click')
+  if (props.enabled) {
+    emits('click')
+  }
 }
 </script>

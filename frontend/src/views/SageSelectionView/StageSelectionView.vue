@@ -20,7 +20,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import StageCard from '@/components/StageCard/StageCard.vue'
+
+// router
+const router = useRouter()
 
 // refs
 const stages = ref([
@@ -81,6 +85,6 @@ const stages = ref([
 // actions
 const handleStageClick = (stageId) => {
   console.log('Stage clicked:', stageId)
-  // TODO: Navigate to stage or handle stage selection
+  router.push(`/typing-game/${stageId}`)
 }
 </script>
