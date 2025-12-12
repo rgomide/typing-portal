@@ -13,6 +13,7 @@ const isStorybook = process.env.STORYBOOK === 'true' ||
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/',
   plugins: [
     vue(),
     // Exclude vueDevTools when running Storybook to avoid vite-plugin-inspect errors
@@ -24,4 +25,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    outDir: '../backend/public',
+    minify: true,
+    manifest: true
+  }
 })

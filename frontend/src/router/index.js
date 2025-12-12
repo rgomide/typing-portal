@@ -1,5 +1,5 @@
 import AuthView from '@/views/AuthView/AuthView.vue'
-import StageSelectionView from '@/views/StageSelectionView/StageSelectionView.vue'
+import StageSelectionView from '@/views/SageSelectionView/StageSelectionView.vue'
 import TypingGameView from '@/views/TypingGameView/TypingGameView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 

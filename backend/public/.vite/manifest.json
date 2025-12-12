@@ -1,0 +1,26 @@
+{
+  "_howler-Kep_FBPd.js": {
+    "file": "assets/howler-Kep_FBPd.js",
+    "name": "howler",
+    "isDynamicEntry": true
+  },
+  "index.html": {
+    "file": "assets/index-BdfQTdhI.js",
+    "name": "index",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "_howler-Kep_FBPd.js"
+    ],
+    "css": [
+      "assets/index-CN03WzdR.css"
+    ],
+    "assets": [
+      "assets/keyboard-9cl0uJAK.mp3"
+    ]
+  },
+  "src/assets/fx/keyboard.mp3": {
+    "file": "assets/keyboard-9cl0uJAK.mp3",
+    "src": "src/assets/fx/keyboard.mp3"
+  }
+}
