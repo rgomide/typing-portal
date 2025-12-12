@@ -1,15 +1,19 @@
 const router = require('express').Router({ mergeParams: true })
 const { sequelize } = require('@server/models')
 
-const usersController = require('@server/controllers/user.controller')
-const authController = require('@server/controllers/auth.controller')
 const apiLoggerMiddleware = require('@server/middleware/apiLogger')
 const authMiddleware = require('@server/middleware/auth')
 
+const usersController = require('@server/controllers/user.controller')
+const authController = require('@server/controllers/auth.controller')
+const stagesController = require('@server/controllers/stage.controller')
+
 router.use(authMiddleware)
 router.use(apiLoggerMiddleware)
+
 router.use('/users', usersController)
 router.use('/auth', authController)
+router.use('/stages', stagesController)
 
 router.get('/ping', async (req, res) => {
   try {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col py-10">
     <button
       type="button"
       @click="goBack"
@@ -150,7 +150,7 @@
 import TypingGame from '@/components/TypingGame/TypingGame.vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ModalDialog from '@/components/ModalDialog/ModalDialog.vue'
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useBackend } from '@/composables/useBackend'
 
@@ -160,7 +160,7 @@ const router = useRouter()
 const { getStage, isLoading } = useBackend()
 
 // emits
-const emits = defineEmits(['error'])
+const emits = defineEmits(['showMessage'])
 
 // refs
 const textChallenge = ref('')
@@ -194,10 +194,11 @@ const onCompleted = (status) => {
 
 const loadStage = async (stageId) => {
   const response = await getStage(stageId)
+  console.log(response.data)
   if (response.requestSuccessful) {
     textChallenge.value = response.data.textChallenge
   } else {
-    emits('error', response.error)
+    emits('showMessage', { message: response.error, color: 'red' })
   }
 }
 
@@ -235,4 +236,11 @@ const formatTime = (milliseconds) => {
   }
   return `${remainingSeconds}s`
 }
+
+// lifecycle
+onMounted(async () => {
+  if (route.params?.stageId) {
+    await loadStage(route.params.stageId)
+  }
+})
 </script>

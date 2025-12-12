@@ -11,10 +11,10 @@
           <!-- Logo Icon -->
           <div class="relative">
             <div
-              class="absolute inset-0 bg-[#53953F] rounded-xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300"
+              class="absolute inset-0 bg-ifgoiano-primary-500 rounded-xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300"
             ></div>
             <div
-              class="relative bg-[#53953F] p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              class="relative bg-ifgoiano-primary-500 p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -38,12 +38,12 @@
           <!-- Title -->
           <div class="flex flex-col">
             <span
-              class="font-bold text-2xl bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent group-hover:from-[#53953F] group-hover:to-[#6BB855] transition-all duration-300"
+              class="font-bold text-2xl bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent group-hover:from-ifgoiano-primary-500 group-hover:to-ifgoiano-primary-400 transition-all duration-300"
             >
               Typing Portal
             </span>
             <span
-              class="text-xs font-medium text-slate-500 group-hover:text-[#53953F] transition-colors duration-300"
+              class="text-xs font-medium text-slate-500 group-hover:text-ifgoiano-primary-500 transition-colors duration-300"
             >
               Melhore suas habilidades de digitação
             </span>

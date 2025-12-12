@@ -28,7 +28,27 @@
 
     <!-- Thumbnail Image -->
     <div :class="['w-full mb-4 rounded-lg overflow-hidden', !enabled && 'grayscale']">
-      <img :src="thumbUrl" :alt="title" class="w-full h-48 object-cover" />
+      <img v-if="thumbUrl" :src="thumbUrl" :alt="title" class="w-full h-48 object-cover" />
+      <div v-else class="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+        <svg class="w-16 h-16" fill="none" viewBox="0 0 24 24">
+          <!-- Image frame -->
+          <path
+            stroke="#9ca3af"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
+          <!-- Diagonal slash indicating missing -->
+          <path
+            stroke="#9ca3af"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 21L21 3"
+          />
+        </svg>
+      </div>
     </div>
 
     <!-- Description -->
