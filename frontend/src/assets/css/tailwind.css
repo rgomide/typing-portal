@@ -1,1 +1,25 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-ifgoiano-primary-0: #f7fbf6;
+  --color-ifgoiano-primary-50: #eef5ec;
+  --color-ifgoiano-primary-100: #ddebd9;
+  --color-ifgoiano-primary-150: #cce1c6;
+  --color-ifgoiano-primary-200: #bbd7b3;
+  --color-ifgoiano-primary-250: #aacda0;
+  --color-ifgoiano-primary-300: #99c38d;
+  --color-ifgoiano-primary-350: #88b97a;
+  --color-ifgoiano-primary-400: #77af67;
+  --color-ifgoiano-primary-450: #66a554;
+  --color-ifgoiano-primary-500: #53953f;
+  --color-ifgoiano-primary-550: #4a8538;
+  --color-ifgoiano-primary-600: #417531;
+  --color-ifgoiano-primary-650: #38652a;
+  --color-ifgoiano-primary-700: #2f5523;
+  --color-ifgoiano-primary-750: #26451c;
+  --color-ifgoiano-primary-800: #1d3515;
+  --color-ifgoiano-primary-850: #14250e;
+  --color-ifgoiano-primary-900: #0b1507;
+  --color-ifgoiano-primary-950: #050803;
+  --color-ifgoiano-primary-1000: #000000;
+}

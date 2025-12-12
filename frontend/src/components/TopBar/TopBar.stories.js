@@ -1,3 +1,4 @@
+import { vueRouter } from 'storybook-vue3-router'
 import TopBar from './TopBar.vue'
 import { useAuthStore } from '@/stores/storeAuth'
 
@@ -27,7 +28,8 @@ export const Default = {
       return { args }
     },
     template: TopBarTemplate
-  })
+  }),
+  decorators: [vueRouter()]
 }
 
 export const UserIsNotLoggedIn = {
@@ -42,5 +44,6 @@ export const UserIsNotLoggedIn = {
       return { args }
     },
     template: TopBarTemplate
-  })
+  }),
+  decorators: [vueRouter()]
 }

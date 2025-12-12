@@ -36,7 +36,12 @@
     </div>
 
     <div class="pt-2 w-full">
-      <LoadingButton label="Entrar" @click="onLogin" :is-loading="props.isLoading" />
+      <LoadingButton
+        color="ifgoiano-primary"
+        label="Entrar"
+        @click="onLogin"
+        :is-loading="props.isLoading"
+      />
     </div>
   </form>
 </template>

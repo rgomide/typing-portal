@@ -48,7 +48,6 @@ export const Default = {
   parameters: { msw: { handlers } }
 }
 
-
 export const Error = {
   name: 'Auth error',
   args: {
