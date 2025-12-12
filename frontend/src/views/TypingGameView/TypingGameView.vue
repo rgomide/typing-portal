@@ -194,7 +194,7 @@ const onCompleted = (status) => {
 
 const loadStage = async (stageId) => {
   const response = await getStage(stageId)
-  console.log(response.data)
+
   if (response.requestSuccessful) {
     textChallenge.value = response.data.textChallenge
   } else {
@@ -226,15 +226,23 @@ const accuracyBarColor = computed(() => {
 })
 
 const formatTime = (milliseconds) => {
-  if (!milliseconds) return '0s'
-  const seconds = Math.floor(milliseconds / 1000)
-  const minutes = Math.floor(seconds / 60)
-  const remainingSeconds = seconds % 60
+  if (!milliseconds) return '0ms'
+  const totalSeconds = Math.floor(milliseconds / 1000)
+  const minutes = Math.floor(totalSeconds / 60)
+  const remainingSeconds = totalSeconds % 60
+  const remainingMilliseconds = milliseconds % 1000
 
+  const parts = []
   if (minutes > 0) {
-    return `${minutes}m ${remainingSeconds}s`
+    parts.push(`${minutes}m`)
   }
-  return `${remainingSeconds}s`
+  if (remainingSeconds > 0 || minutes > 0) {
+    parts.push(`${remainingSeconds}s`)
+  }
+  if (remainingMilliseconds > 0 || parts.length === 0) {
+    parts.push(`${String(remainingMilliseconds).padStart(3, '0').slice(0, 2)}ms`)
+  }
+  return parts.join(' ')
 }
 
 // lifecycle

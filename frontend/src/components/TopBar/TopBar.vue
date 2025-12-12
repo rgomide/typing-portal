@@ -14,24 +14,13 @@
               class="absolute inset-0 bg-ifgoiano-primary-500 rounded-xl blur-sm opacity-50 group-hover:opacity-75 transition-opacity duration-300"
             ></div>
             <div
-              class="relative bg-ifgoiano-primary-500 p-2.5 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              class="relative bg-ifgoiano-primary-500 rounded-xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 w-12 h-12 flex items-center justify-center overflow-hidden"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="w-6 h-6"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              <img
+                src="@/assets/img/velodedo.svg"
+                alt="VeloDedo Logo"
+                class="w-full h-full object-cover scale-110"
+              />
             </div>
           </div>
 
@@ -40,12 +29,12 @@
             <span
               class="font-bold text-2xl bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent group-hover:from-ifgoiano-primary-500 group-hover:to-ifgoiano-primary-400 transition-all duration-300"
             >
-              Typing Portal
+              VeloDedo
             </span>
             <span
               class="text-xs font-medium text-slate-500 group-hover:text-ifgoiano-primary-500 transition-colors duration-300"
             >
-              Melhore suas habilidades de digitação
+              Domine o teclado, conquiste a técnica
             </span>
           </div>
         </h1>
@@ -60,7 +49,7 @@
         >
           <!-- Hover background effect -->
           <span
-            class="absolute inset-0 bg-[#C90C0F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-ifgoiano-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           ></span>
 
           <!-- Content -->
@@ -81,7 +70,7 @@
               <path d="M10 12l4-4-4-4" />
               <path d="M14 8H6" />
             </svg>
-            <span class="text-sm font-medium hidden sm:inline">Logout</span>
+            <span class="text-sm font-medium hidden sm:inline">Sair</span>
           </span>
 
           <!-- Shine effect -->

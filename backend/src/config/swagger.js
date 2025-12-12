@@ -4,9 +4,9 @@ const options = {
   definition: {
     openapi: '3.1.1',
     info: {
-      title: 'Typing Portal API',
+      title: 'VeloDedo API',
       version: '1.0.0',
-      description: 'API documentation for Typing Portal',
+      description: 'API documentation for VeloDedo',
       contact: {
         name: 'Renato Gomide',
         email: 'renato.gomide@ifgoiano.edu.br'
@@ -18,7 +18,7 @@ const options = {
         description: 'Local server'
       },
       {
-        url: 'https://typing-portal-backend.onrender.com/',
+        url: 'https://velodedo-backend.onrender.com/',
         description: 'Production server'
       }
     ],

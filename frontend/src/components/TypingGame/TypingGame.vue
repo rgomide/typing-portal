@@ -238,7 +238,7 @@ const getCharClass = (index) => {
     // Already typed
     const isCorrect = typedChars.value[index] === props.textChallenge[index]
     return isCorrect
-      ? 'text-green-700 bg-green-200 font-semibold shadow-sm'
+      ? 'text-ifgoiano-primary-500 bg-ifgoiano-primary-100 font-semibold shadow-sm'
       : 'text-red-700 bg-red-200 font-semibold line-through shadow-sm'
   } else if (index === currentIndex.value) {
     // Current character
@@ -356,7 +356,7 @@ const handleKeyPress = (event) => {
 
   // Set highlight color based on correctness
   if (keyCode) {
-    highlightedKeys.value[keyCode] = isCorrect ? 'green' : 'red'
+    highlightedKeys.value[keyCode] = isCorrect ? 'ifgoiano-primary' : 'red'
 
     // Clear highlight after animation duration
     setTimeout(() => {
