@@ -58,12 +58,23 @@ const handleClick = () => {
 }
 
 const buttonClass = computed(() => {
-  let classes = 'flex items-center justify-center gap-2 px-4 py-2 rounded-md text-white w-full'
+  const baseClasses =
+    'flex items-center justify-center gap-2 px-4 py-2 rounded-md text-white w-full'
+
   if (props.isLoading) {
-    classes += ' bg-gray-500 cursor-not-allowed'
-  } else {
-    classes += ` bg-${props.color}-500 hover:bg-${props.color}-600 active:bg-${props.color}-700 cursor-pointer`
+    return `${baseClasses} bg-gray-500 cursor-not-allowed`
   }
-  return classes
+
+  const colorClasses = {
+    blue: 'bg-blue-500 hover:bg-blue-600 active:bg-blue-700',
+    green: 'bg-green-500 hover:bg-green-600 active:bg-green-700',
+    red: 'bg-red-500 hover:bg-red-600 active:bg-red-700',
+    yellow: 'bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700',
+    gray: 'bg-gray-500 hover:bg-gray-600 active:bg-gray-700',
+    'ifgoiano-primary':
+      'bg-ifgoiano-primary-500 hover:bg-ifgoiano-primary-600 active:bg-ifgoiano-primary-700'
+  }
+
+  return `${baseClasses} ${colorClasses[props.color] || colorClasses.blue} cursor-pointer`
 })
 </script>

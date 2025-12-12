@@ -567,6 +567,7 @@ const getKeyHighlightClass = (code) => {
   if (!color) return ''
 
   const colorMap = {
+    'ifgoiano-primary': 'bg-ifgoiano-primary-500 text-white border-ifgoiano-primary-600 shadow-lg',
     blue: 'bg-blue-500 text-white border-blue-600 shadow-lg',
     red: 'bg-red-500 text-white border-red-600 shadow-lg',
     green: 'bg-green-500 text-white border-green-600 shadow-lg',

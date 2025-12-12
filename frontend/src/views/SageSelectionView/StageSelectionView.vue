@@ -39,7 +39,6 @@ const stages = ref([])
 
 // actions
 const handleStageClick = (stageId) => {
-  console.log('Stage clicked:', stageId)
   router.push(`/typing-game/${stageId}`)
 }
 

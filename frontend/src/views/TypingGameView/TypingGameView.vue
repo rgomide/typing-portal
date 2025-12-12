@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col py-10">
     <button
       type="button"
       @click="goBack"
@@ -150,7 +150,7 @@
 import TypingGame from '@/components/TypingGame/TypingGame.vue'
 import Spinner from '@/components/Spinner/Spinner.vue'
 import ModalDialog from '@/components/ModalDialog/ModalDialog.vue'
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useBackend } from '@/composables/useBackend'
 
@@ -160,7 +160,7 @@ const router = useRouter()
 const { getStage, isLoading } = useBackend()
 
 // emits
-const emits = defineEmits(['error'])
+const emits = defineEmits(['showMessage'])
 
 // refs
 const textChallenge = ref('')
@@ -194,10 +194,11 @@ const onCompleted = (status) => {
 
 const loadStage = async (stageId) => {
   const response = await getStage(stageId)
+
   if (response.requestSuccessful) {
     textChallenge.value = response.data.textChallenge
   } else {
-    emits('error', response.error)
+    emits('showMessage', { message: response.error, color: 'red' })
   }
 }
 
@@ -225,14 +226,29 @@ const accuracyBarColor = computed(() => {
 })
 
 const formatTime = (milliseconds) => {
-  if (!milliseconds) return '0s'
-  const seconds = Math.floor(milliseconds / 1000)
-  const minutes = Math.floor(seconds / 60)
-  const remainingSeconds = seconds % 60
+  if (!milliseconds) return '0ms'
+  const totalSeconds = Math.floor(milliseconds / 1000)
+  const minutes = Math.floor(totalSeconds / 60)
+  const remainingSeconds = totalSeconds % 60
+  const remainingMilliseconds = milliseconds % 1000
 
+  const parts = []
   if (minutes > 0) {
-    return `${minutes}m ${remainingSeconds}s`
+    parts.push(`${minutes}m`)
   }
-  return `${remainingSeconds}s`
+  if (remainingSeconds > 0 || minutes > 0) {
+    parts.push(`${remainingSeconds}s`)
+  }
+  if (remainingMilliseconds > 0 || parts.length === 0) {
+    parts.push(`${String(remainingMilliseconds).padStart(3, '0').slice(0, 2)}ms`)
+  }
+  return parts.join(' ')
 }
+
+// lifecycle
+onMounted(async () => {
+  if (route.params?.stageId) {
+    await loadStage(route.params.stageId)
+  }
+})
 </script>

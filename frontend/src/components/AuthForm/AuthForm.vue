@@ -4,6 +4,17 @@
     class="flex flex-col gap-6 w-[500px] bg-white border border-gray-200 rounded-lg p-8 shadow-lg"
   >
     <div class="text-center mb-2">
+      <div class="flex justify-center mb-4">
+        <div
+          class="relative bg-ifgoiano-primary-500 shadow-md w-16 h-16 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="@/assets/img/velodedo.svg"
+            alt="VeloDedo Logo"
+            class="w-full h-full object-cover scale-110"
+          />
+        </div>
+      </div>
       <h2 class="text-2xl font-bold text-gray-800 mb-1">Bem-vindo</h2>
       <p class="text-sm text-gray-500">Entre com suas credenciais</p>
     </div>
@@ -36,7 +47,12 @@
     </div>
 
     <div class="pt-2 w-full">
-      <LoadingButton label="Entrar" @click="onLogin" :is-loading="props.isLoading" />
+      <LoadingButton
+        color="ifgoiano-primary"
+        label="Entrar"
+        @click="onLogin"
+        :is-loading="props.isLoading"
+      />
     </div>
   </form>
 </template>

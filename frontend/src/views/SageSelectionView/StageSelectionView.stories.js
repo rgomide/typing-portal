@@ -1,5 +1,5 @@
-import { vueRouter } from 'storybook-vue3-router'
 import StageSelectionView from './StageSelectionView.vue'
+import { vueRouter } from 'storybook-vue3-router'
 import { http, HttpResponse, delay } from 'msw'
 
 export default {

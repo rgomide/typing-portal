@@ -10,7 +10,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'auth',
-      component: AuthView
+      component: AuthView,
+      beforeEnter: () => redirectToSelectStage()
     },
     {
       path: '/stage-selection',
@@ -19,7 +20,7 @@ const router = createRouter({
       beforeEnter: () => canAccessAuthenticatedRoutes()
     },
     {
-      path: '/typing-game/:id',
+      path: '/typing-game/:stageId',
       name: 'typing-game',
       component: TypingGameView,
       beforeEnter: () => canAccessAuthenticatedRoutes()
@@ -31,6 +32,13 @@ const canAccessAuthenticatedRoutes = () => {
   const { isAuthenticated } = useAuth()
   if (!isAuthenticated()) {
     router.push('/')
+  }
+}
+
+const redirectToSelectStage = () => {
+  const { isAuthenticated } = useAuth()
+  if (isAuthenticated()) {
+    router.push('/stage-selection')
   }
 }
 

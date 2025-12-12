@@ -36,6 +36,26 @@ export const Default = {
   })
 }
 
+export const MissingImage = {
+  name: 'Missing Image',
+  args: {
+    id: 1,
+    title: 'Beginner Typing',
+    description:
+      'Start your typing journey with simple words and sentences. Perfect for beginners.',
+    difficulty: 2,
+    enabled: true,
+    thumbUrl: null
+  },
+  render: (args) => ({
+    components: { StageCard },
+    setup() {
+      return { args }
+    },
+    template: StageCardTemplate
+  })
+}
+
 export const Disabled = {
   name: 'Disabled Card',
   args: {

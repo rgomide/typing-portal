@@ -6,6 +6,7 @@ module.exports = {
   ROLES: {
     ADMIN: 'admin',
     MANAGER: 'manager',
-    GUEST: 'guest'
+    GUEST: 'guest',
+    PLAYER: 'player'
   }
 }
