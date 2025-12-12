@@ -30,10 +30,10 @@ import Spinner from '@/components/Spinner/Spinner.vue'
 import { useBackend } from '@/composables/useBackend'
 
 // emits
-const emits = defineEmits(['error'])
+const emits = defineEmits(['showMessage'])
 // init
 const router = useRouter()
-const { getStages, isLoading, data, error } = useBackend()
+const { getStages, isLoading } = useBackend()
 // refs
 const stages = ref([])
 
@@ -50,7 +50,8 @@ onMounted(async () => {
   if (response.requestSuccessful) {
     stages.value = response.data
   } else {
-    emits('error', response.error)
+    const message = response.error || 'Erro ao carregar os estágios'
+    emits('showMessage', { message, color: 'red' })
   }
 })
 </script>

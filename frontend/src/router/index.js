@@ -1,7 +1,8 @@
 import AuthView from '@/views/AuthView/AuthView.vue'
-import StageSelectionView from '@/views/StageSelectionView/StageSelectionView.vue'
+import StageSelectionView from '@/views/SageSelectionView/StageSelectionView.vue'
 import TypingGameView from '@/views/TypingGameView/TypingGameView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuth } from '@/composables/useAuth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,14 +15,23 @@ const router = createRouter({
     {
       path: '/stage-selection',
       name: 'stage-selection',
-      component: StageSelectionView
+      component: StageSelectionView,
+      beforeEnter: () => canAccessAuthenticatedRoutes()
     },
     {
       path: '/typing-game/:id',
       name: 'typing-game',
-      component: TypingGameView
+      component: TypingGameView,
+      beforeEnter: () => canAccessAuthenticatedRoutes()
     }
   ]
 })
+
+const canAccessAuthenticatedRoutes = () => {
+  const { isAuthenticated } = useAuth()
+  if (!isAuthenticated()) {
+    router.push('/')
+  }
+}
 
 export default router

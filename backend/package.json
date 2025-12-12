@@ -1,0 +1,63 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "NODE_ENV=development nodemon --env-file=.dev.env src/server.js",
+    "win:dev": "set NODE_ENV=development&& nodemon --env-file=.dev.env \"./src/server.js\"",
+    "prod": "NODE_ENV=production nodemon --env-file=.prod.env src/server.js",
+    "format": "prettier --write \"**/*.{js,mjs}\"",
+    "test": "NODE_ENV=test node --env-file=.test.env node_modules/jest/bin/jest.js --detectOpenHandles",
+    "test:win": "set NODE_ENV=test&&node --env-file=.test.env \"./node_modules/jest/bin/jest.js\" --detectOpenHandles",
+    "create:win:dev": "set NODE_ENV=development&& node --env-file=.dev.env \"./node_modules/sequelize-cli/lib/sequelize\" db:create",
+    "migrate:win:dev": "set NODE_ENV=development&& node --env-file=.dev.env \"./node_modules/sequelize-cli/lib/sequelize\" db:migrate",
+    "seed:win:dev": "set NODE_ENV=development&& node --env-file=.dev.env \"./node_modules/sequelize-cli/lib/sequelize\" db:seed:undo:all && set NODE_ENV=development&& node --env-file=.dev.env \"./node_modules/sequelize-cli/lib/sequelize\" db:seed:all",
+    "create:dev": "NODE_ENV=development node --env-file=.dev.env node_modules/.bin/sequelize-cli db:create",
+    "create:prod": "NODE_ENV=production node --env-file=.prod.env node_modules/.bin/sequelize-cli db:create",
+    "create:test": "NODE_ENV=test node --env-file=.test.env node_modules/.bin/sequelize-cli db:create",
+    "create:win:test": "set NODE_ENV=test&& node --env-file=.test.env \"./node_modules/sequelize-cli/lib/sequelize\" db:create",
+    "migrate:dev": "NODE_ENV=development node --env-file=.dev.env node_modules/.bin/sequelize-cli db:migrate",
+    "migrate:prod": "NODE_ENV=production node node_modules/.bin/sequelize-cli db:migrate",
+    "migrate:test": "NODE_ENV=test node --env-file=.test.env node_modules/.bin/sequelize-cli db:migrate",
+    "migrate:win:test": "set NODE_ENV=test&& node --env-file=.test.env \"./node_modules/sequelize-cli/lib/sequelize\" db:migrate",
+    "migrate:undo:dev": "NODE_ENV=development node --env-file=.dev.env node_modules/.bin/sequelize-cli db:migrate:undo",
+    "migrate:undo:test": "NODE_ENV=test node --env-file=.test.env node_modules/.bin/sequelize-cli db:migrate:undo",
+    "seed:dev": "NODE_ENV=development node --env-file=.dev.env node_modules/.bin/sequelize-cli db:seed:undo:all && NODE_ENV=development node --env-file=.dev.env node_modules/.bin/sequelize-cli db:seed:all",
+    "seed:prod": "NODE_ENV=production node --env-file=.prod.env node_modules/.bin/sequelize-cli db:seed:undo:all && NODE_ENV=production node --env-file=.prod.env node_modules/.bin/sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "_moduleAliases": {
+    "@server": "src"
+  },
+  "dependencies": {
+    "connect-history-api-fallback": "^2.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "module-alias": "^2.2.3",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "request-ip": "^3.3.0",
+    "sequelize": "^6.37.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@faker-js/faker": "^10.1.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4",
+    "sequelize-cli": "^6.6.3",
+    "supertest": "^7.1.4"
+  }
+}

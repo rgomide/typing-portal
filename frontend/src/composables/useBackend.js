@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import axios from 'axios'
+import { useAuthStore } from '@/stores/storeAuth'
 
 const GET = 'get'
 const POST = 'post'
@@ -7,10 +8,16 @@ const PUT = 'put'
 const DELETE = 'delete'
 
 export function useBackend() {
+  const authStore = useAuthStore()
   const baseUrl = import.meta.env.VITE_API_URL
   const isLoading = ref(false)
   const data = ref(null)
   const error = ref(null)
+
+  async function login(userName, password) {
+    const url = `api/auth/login`
+    return makeRequest(url, POST, { userName, password })
+  }
 
   async function getStages() {
     const url = `api/stages`
@@ -70,14 +77,14 @@ export function useBackend() {
   }
 
   function addTokenToRequest(requestConfiguration) {
-    // if (authStore.token) {
-    //   const headers = requestConfiguration['headers'] || {}
+    if (authStore.token) {
+      const headers = requestConfiguration['headers'] || {}
 
-    //   requestConfiguration['headers'] = {
-    //     ...headers,
-    //     Authorization: `Bearer ${authStore.token}`
-    //   }
-    // }
+      requestConfiguration['headers'] = {
+        ...headers,
+        Authorization: `Bearer ${authStore.token}`
+      }
+    }
     return requestConfiguration
   }
 
@@ -116,6 +123,7 @@ export function useBackend() {
   }
 
   return {
+    login,
     getStages,
     getStage,
     isLoading,
